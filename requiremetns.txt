@@ -1,4 +1,2 @@
 selenium
 discord-webhook
-git+https://github.com/heroku/heroku-buildpack-chromedriver
-git+https://github.com/heroku/heroku-buildpack-google-chrome
