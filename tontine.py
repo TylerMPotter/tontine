@@ -44,7 +44,7 @@ while True:
 
     driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[4]/div[2]/div/button/div').click()
 
-    time.sleep(2)
+    time.sleep(10)
 
 #try:
     driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div').click()
