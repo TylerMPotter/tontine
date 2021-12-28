@@ -47,7 +47,11 @@ while True:
     time.sleep(10)
 
 #try:
-    driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div').click()
+    button = driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div')
+    driver.execute_script("arguments[0].click();", button)
+
+    #element = driver.find_element_by_css('div[class*="loadingWhiteBox"]')
+    #driver.execute_script("arguments[0].click();", element)
     
     webhook = DiscordWebhook(url=os.environ['STREAKHOOK'], content="You've survived...for today...")
     response = webhook.execute()
