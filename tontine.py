@@ -53,8 +53,8 @@ while True:
 #try:
     driver.find_elements_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[2]/div[1]/div')
     elem = driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[1]')
-    ac = ActionChains(driver)
-    ac.move_to_element(elem).move_by_offset(1, 1).click().perform()
+    #ac = ActionChains(driver)
+    #ac.move_to_element(elem).move_by_offset(1, 1).click().perform()
     #driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[1]').click()
     driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div').click()
     webhook = DiscordWebhook(url=os.environ['STREAKHOOK'], content="You've survived...for today...")
