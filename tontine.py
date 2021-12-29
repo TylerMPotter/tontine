@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
 from discord_webhook import DiscordWebhook
 import time
 import os
