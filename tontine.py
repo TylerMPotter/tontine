@@ -51,8 +51,7 @@ while True:
     time.sleep(2)
 
 #try:
-    driver.find_elements_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[2]/div[1]/div')
-    elem = driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[1]')
+    #driver.find_elements_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[2]/div[1]/div')
     #ac = ActionChains(driver)
     #ac.move_to_element(elem).move_by_offset(1, 1).click().perform()
     #driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[1]').click()
