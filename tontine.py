@@ -21,8 +21,9 @@ while True:
 
     ua = UserAgent()
     userAgent = ua.random
-    print(userAgent)
-    chrome_options.add_argument('--user-agent="Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166"')
+    print(userAgent)  Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36
+
+    chrome_options.add_argument("--user-agent=" + userAgent)
 
 #try:
 
@@ -53,7 +54,7 @@ while True:
 
     driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[4]/div[2]/div/button/div').click()
 
-    time.sleep(2)
+    time.sleep(3)
 
 #try:
     #driver.find_elements_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[2]/div[1]/div')
