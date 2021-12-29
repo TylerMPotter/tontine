@@ -11,9 +11,11 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ["GOOGLE_CHROME_BIN"]
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--start-maximized")
-chrome_options.add_argument("--window-size=1920,1080")
+chrome_options.add_argument("--window-size=1100,1000")
 chrome_options.add_argument("--disable-dev-ahm-usage")
-chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--no-sandbox")]
+chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+chrome_options.add_experimental_option('useAutomationExtension', False)
 
 url = 'https://tontine.cash/'
 
@@ -21,7 +23,7 @@ while True:
 
     ua = UserAgent()
     userAgent = ua.random
-    print(userAgent)  Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36
+    print(userAgent)
 
     chrome_options.add_argument("--user-agent=" + userAgent)
 
@@ -44,6 +46,7 @@ while True:
     time.sleep(2)
 
     for key in data.keys():
+        time.sleep(2)
         info = "Placeholder"
         if key == 'email':
             info = email
@@ -51,6 +54,8 @@ while True:
             info = passw
 
         driver.find_element_by_xpath(data.get(key)).send_keys(info)
+    
+    time.sleep(2)
 
     driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[4]/div[2]/div/button/div').click()
 
