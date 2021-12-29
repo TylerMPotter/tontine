@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
+from fake_useragent import UserAgent
 from discord_webhook import DiscordWebhook
 import time
 import os
@@ -18,6 +18,11 @@ chrome_options.add_argument("--no-sandbox")
 url = 'https://tontine.cash/'
 
 while True:
+
+    ua = UserAgent()
+    userAgent = ua.random
+    print(userAgent)
+    chrome_options.add_argument('--user-agent="Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166"')
 
 #try:
 
