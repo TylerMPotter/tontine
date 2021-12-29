@@ -9,6 +9,7 @@ passw = os.environ['PASSW']
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ["GOOGLE_CHROME_BIN"]
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--start-maximized")
 chrome_options.add_argument("--disable-dev-ahm-usage")
 chrome_options.add_argument("--no-sandbox")
 
@@ -48,7 +49,7 @@ while True:
 
     #try:
     driver.find_elements_by_xpath('//*[@id="__layout"]/div/div/div[5]/div[2]/div[2]').click()
-    driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div').click()
+    #driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div').click()
     
     webhook = DiscordWebhook(url=os.environ['STREAKHOOK'], content="You've survived...for today...")
     response = webhook.execute()
