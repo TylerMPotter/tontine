@@ -65,6 +65,8 @@ while True:
 
         try:
             driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div').click()
+            time.sleep(2)
+            driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div').click()
             webhook = DiscordWebhook(url=os.environ['STREAKHOOK'], content="You've survived...for today...")
             response = webhook.execute()
         except:
