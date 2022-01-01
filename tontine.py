@@ -65,15 +65,15 @@ while True:
         driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[4]/div[2]/div/button/div').click()
 
         time.sleep(3)
-
-        if driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div'):
+        try:
+            check = driver.find_element_by_xpath('//*[@id="__layout"]/div/div/div[3]/div/div[2]/button/div')
 
             seen = datetime.now()
             seenFormat = seen.strftime("%H:%M:%S")
 
             justSawButton = True
         
-        else:
+        except:
             if justSawButton:
 
                 clicked = datetime.now()
@@ -82,7 +82,7 @@ while True:
                 webhook = DiscordWebhook(url=os.environ['STREAKHOOK'], content="Button seen at: " + seenFormat + "\nButton clicked at: " + clikedFormat)
                 response = webhook.execute()
 
-                justSawButton[0] = False
+                justSawButton = False
 
 
         try:
