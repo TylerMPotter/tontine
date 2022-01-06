@@ -22,9 +22,11 @@ url = 'https://tontine.cash/'
 
 justSawButton = False
 
-while True:
+count = 0
 
-    time.sleep(20)
+while count < 5:
+
+    time.sleep(10)
 
     ua = UserAgent()
     userAgent = ua.random
@@ -98,10 +100,12 @@ while True:
         time.sleep(2)
 
         driver.quit()
+        count+=1
     except:
         webhook = DiscordWebhook(url=os.environ['LOGINHOOK'], content="something is broken")
         response = webhook.execute()
         driver.quit()
+        count+=1
 '''
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
