@@ -76,6 +76,12 @@ while count < 5:
             justSawButton = True
 
             print("saw button")
+
+            if int(seen[0:2]) >= 10:
+                webhook = DiscordWebhook(url=os.environ['LOGINHOOK'], content="EMERGENCY")
+                webhook = DiscordWebhook(url=os.environ['LOGINHOOK'], content="EMERGENCY")
+                webhook = DiscordWebhook(url=os.environ['LOGINHOOK'], content="EMERGENCY")
+
         
         except:
             if justSawButton:
